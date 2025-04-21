@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FindIt - Campus Lost & Found</title>
+  <link rel="stylesheet" href="firstpage.css">
+</head>
+<body>
+  <div class="hero-container">
+    <div class="content-box">
+      <img src="images/ChatGPT_Image_Apr_20__2025__06_17_30_AM-removebg-preview.png" alt="FindIt Logo" class="logo">
+      <h1>Find What You Lost</h1>
+      <p class="tagline">Connecting lost items with their owners across campuses</p>
+      
+      <div class="search-container">
+        <div class="search-wrapper">
+          <input type="text" id="universityInput" placeholder="Search your university...">
+          <div id="autocompleteList" class="autocomplete-items"></div>
+        </div>
+        <div class="button-group" id="authButtons">
+          <button class="btn-login" onclick="window.location.href='login.html'">Login</button>
+          <button class="btn-signup" onclick="window.location.href='signup.html'">Sign Up</button>
+        </div>
+      </div>
+      
+      <div class="features">
+        <div class="feature-card">
+          <span class="icon">🔍</span>
+          <h3>Search Database</h3>
+          <p>Browse thousands of lost items</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">📝</span>
+          <h3>Quick Report</h3>
+          <p>Report lost or found items</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">🔒</span>
+          <h3>Secure Claims</h3>
+          <p>Verified item recovery</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="mini-footer">
+    <p>© 2025 FindIt | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms</a></p>
+  </footer>
+
+  <script src="firstpage.js"></script>
+</body>
+</html>
+<script>
+  const universityInput = document.getElementById('universityInput');
+  const autocompleteList = document.getElementById('autocompleteList');
+  let universities = [];
+
+  // Load universities.json
+  fetch('universities.json') // make sure path is correct
+    .then(res => res.json())
+    .then(data => {
+      universities = data;
+    });
+
+  universityInput.addEventListener('input', function () {
+    const value = this.value.toLowerCase();
+    autocompleteList.innerHTML = '';
+
+    if (!value) return;
+
+    const matches = universities.filter(uni =>
+      uni.toLowerCase().includes(value)
+    );
+
+    matches.forEach(match => {
+      const div = document.createElement('div');
+      div.textContent = match;
+      div.classList.add('autocomplete-item');
+      div.addEventListener('click', () => {
+        universityInput.value = match;
+        autocompleteList.innerHTML = '';
+      });
+      autocompleteList.appendChild(div);
+    });
+  });
+
+  // Close list when clicking outside
+  document.addEventListener('click', function (e) {
+    if (e.target !== universityInput) {
+      autocompleteList.innerHTML = '';
+    }
+  });
+</script>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FindIt - Dashboard</title>
+  <link rel="stylesheet" href="homepage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Background Image -->
+  <div class="background-image"></div>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="ChatGPT_Image_Apr_20__2025__06_17_30_AM-removebg-preview.png" alt="FindIt Logo" class="logo-img">
+      <span class="logo-text">FindIt</span>
+    </div>
+    <nav class="nav">
+      <a href="homepage.html" class="active">Home</a>
+      <a href="reportlost.html">Report Lost</a>
+      <a href="reportfound.html">Report Found</a>
+      <a href="firstpage.html" class="logout-btn">Logout</a>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+      <div class="container">
+        <div class="welcome-message">
+          <h1>Welcome Back, User!</h1>
+          <p>Manage your lost and found items or help reunite others with their belongings</p>
+          <div class="stats">
+            <div class="stat-card">
+              <i class="fas fa-search"></i>
+              <div>
+                <span class="number">3</span>
+                <span class="label">Active Reports</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <span class="number">5</span>
+                <span class="label">Resolved Cases</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-hand-holding-heart"></i>
+              <div>
+                <span class="number">2</span>
+                <span class="label">Items Found</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions-section">
+      <div class="container">
+        <h2 class="section-title">Quick Actions</h2>
+        <div class="action-grid">
+          <a href="reportlost.html" class="action-card">
+            <div class="icon-circle">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3>Report Lost Item</h3>
+            <p>Can't find something valuable? File a report here</p>
+          </a>
+          <a href="reportfound.html" class="action-card">
+            <div class="icon-circle">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h3>Report Found Item</h3>
+            <p>Found someone's belongings? Help return them</p>
+          </a>
+          <a href="browse.html" class="action-card">
+            <div class="icon-circle">
+              <i class="fas fa-list"></i>
+            </div>
+            <h3>Browse Items</h3>
+            <p>View recently lost and found items on campus</p>
+          </a>
+          <a href="manageprofile.html" class="action-card">
+            <div class="icon-circle">
+              <i class="fas fa-user-cog"></i>
+            </div>
+            <h3>Manage Profile</h3>
+            <p>Update your contact information and preferences</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Activity -->
+    <section class="recent-activity-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Your Recent Activity</h2>
+          <a href="activity.html" class="view-all">View All</a>
+        </div>
+        <div class="activity-list">
+          <!-- Filled by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Items -->
+    <section class="recent-items-section">
+      <div class="container">
+        <h2 class="section-title">Recently Found Items</h2>
+        <div class="items-grid">
+          <div class="item-card">
+            <div class="item-image">
+              <img src="WhatsApp Image 2025-04-20 at 19.23.42_0a5bcfac.jpg" alt="Found Wallet">
+            </div>
+            <div class="item-details">
+              <h3>Black Leather Wallet</h3>
+              <p><i class="fas fa-map-marker-alt"></i> Library</p>
+              <p><i class="far fa-calendar-alt"></i> Found today</p>
+              <div class="status found">Reported Found</div>
+            </div>
+          </div>
+          <div class="item-card">
+            <div class="item-image">
+              <img src="download.jpeg" alt="Found Phone">
+            </div>
+            <div class="item-details">
+              <h3>iPhone 13 Pro</h3>
+              <p><i class="fas fa-map-marker-alt"></i> Cafeteria</p>
+              <p><i class="far fa-calendar-alt"></i> Found 2 days ago</p>
+              <div class="status claimed">Claimed</div>
+            </div>
+          </div>
+          <div class="item-card">
+            <div class="item-image">
+              <img src="keys.jpeg" alt="Found Keys">
+            </div>
+            <div class="item-details">
+              <h3>Car Keys with Keychain</h3>
+              <p><i class="fas fa-map-marker-alt"></i> Parking Lot</p>
+              <p><i class="far fa-calendar-alt"></i> Found 3 days ago</p>
+              <div class="status unclaimed">Unclaimed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col about">
+          <div class="logo-container">
+            <img src="images/ChatGPT_Image_Apr_20__2025__06_17_30_AM-removebg-preview.png" alt="FindIt Logo" class="logo-img">
+            <span class="logo-text">FindIt</span>
+          </div>
+          <p class="footer-about">FindIt helps students and staff reunite with their lost belongings across campus.</p>
+       
+        <div class="footer-col links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="reportlost.html">Report Lost Item</a></li>
+            <li><a href="reportfound.html">Report Found Item</a></li>
+            <li><a href="browse.html">Browse Items</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col contact">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-envelope"></i> help@findit.edu</li>
+            <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+            <li><i class="fas fa-map-marker-alt"></i> Campus Security Office, Building A</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 FindIt. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="homepage.js"></script>
+</body>
+</html>

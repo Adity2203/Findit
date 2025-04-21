@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FindIt - Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <img src="ChatGPT_Image_Apr_20__2025__06_17_30_AM-removebg-preview.png" alt="FindIt Logo" class="logo">
+      <h2>Welcome Back</h2>
+      <p>Please login to continue</p>
+
+      <form id="loginForm" onsubmit="return validateLogin(event)">
+        <input type="email" id="email" placeholder="Email" required>
+
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="Password" required>
+          <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+
+        <div class="captcha-wrapper">
+          <div class="captcha-box">
+            <span id="captchaText"></span>
+            <button type="button" onclick="generateCaptcha()" class="refresh-btn">🔄</button>
+          </div>
+          <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" required>
+        </div>
+
+        <button class="btn-login" type="submit">Login</button>
+      </form>
+
+      <div class="footer">
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

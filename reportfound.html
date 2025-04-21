@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Found Item | FindIt</title>
+  <link rel="stylesheet" href="reportfound.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <a href="homepage.html" class="logo">🔍 FindIt</a>
+    </div>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="reportlost.html">Report Lost</a></li>
+        <li><a href="reportfound.html" class="active">Report Found</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="report-container">
+      <h1>🔍 Report a Found Item</h1>
+      <p>Help reunite lost items with their owners by providing details below</p>
+
+      <form id="foundForm">
+        <div class="form-group">
+          <label for="itemName">Item Name</label>
+          <input type="text" id="itemName" name="itemName" placeholder="e.g. Wallet, Phone, Keys" required>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Item Category</label>
+          <select id="category" name="category" required>
+            <option value="">Select a category</option>
+            <option value="wallet">Wallet/Purse</option>
+            <option value="id">ID Card</option>
+            <option value="keys">Keys</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="books">Books/Notes</option>
+            <option value="jewelry">Jewelry</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="4" 
+                    placeholder="Include brand, color, serial numbers, or distinguishing features" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="foundDate">Date Found</label>
+          <input type="date" id="foundDate" name="foundDate" required>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Found Location</label>
+          <input type="text" id="location" name="location" 
+                 placeholder="Building name, room number, or specific area" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Your Contact Information</label>
+          <input type="text" id="contact" name="contact" 
+                 placeholder="Where the owner can reach you" required>
+        </div>
+
+        <div class="form-group">
+          <label for="storage">Current Item Location</label>
+          <input type="text" id="storage" name="storage" 
+                 placeholder="Where the item is being kept now">
+        </div>
+
+        <div class="form-group">
+          <label for="photo">Upload Photo (helps identification)</label>
+          <input type="file" id="photo" name="photo" accept="image/*">
+          <div id="preview"></div>
+        </div>
+
+        <button type="submit">Submit Found Item Report</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="reportlost.html">Report Lost</a></li>
+          <li><a href="reportfound.html">Report Found</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>Email: help@findit.com</li>
+          <li>Phone: +1 (123) 456-7890</li>
+          <li>Campus Security: Ext. 5555</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>About FindIt</h3>
+        <p>Connecting lost items with their owners since 2025</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FindIt | Making campuses happier places</p>
+    </div>
+  </footer>
+
+  <script src="reportfound.js"></script>
+</body>
+</html>

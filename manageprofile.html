@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="manageprofile.css" />
+</head>
+<body>
+  <div class="container">
+    <section class="profile-section">
+      <h2 class="section-title">Manage Profile</h2>
+
+      <div class="profile-card">
+        <div class="profile-image">
+          <img src="profileimg.png" alt="Profile Picture" id="profile-preview"/>
+          <input type="file" id="upload-photo" accept="image/*" hidden />
+          <label for="upload-photo" class="upload-btn"><i class="fas fa-camera"></i></label>
+        </div>
+
+        <form class="profile-form" id="profileForm">
+
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+
+          <div class="form-group">
+            <label for="university">University/Institute</label>
+            <select id="university" required>
+              <option value="">Select your university</option>
+              <option value="uni1">Indian Institute of Technology Bombay (IITB)</option>
+  <option value="uni2">Indian Institute of Technology Delhi (IITD)</option>
+  <option value="uni3">Indian Institute of Technology Madras (IITM)</option>
+  <option value="uni4">Indian Institute of Technology Kanpur (IITK)</option>
+  <option value="uni5">Indian Institute of Technology Kharagpur (IITKGP)</option>
+  <option value="uni6">Indian Institute of Technology Roorkee (IITR)</option>
+  <option value="uni7">Indian Institute of Technology Guwahati (IITG)</option>
+  <option value="uni8">Indian Institute of Technology Hyderabad (IITH)</option>
+  <option value="uni9">Indian Institute of Technology Indore (IITI)</option>
+  <option value="uni10">Indian Institute of Technology (BHU) Varanasi</option>
+  <option value="uni11">Indian Institute of Technology Dhanbad (ISM)</option>
+  <option value="uni12">Indian Institute of Technology Ropar</option>
+  <option value="uni13">Indian Institute of Technology Patna</option>
+  <option value="uni14">Indian Institute of Technology Gandhinagar</option>
+  <option value="uni15">Indian Institute of Technology Bhubaneswar</option>
+  <option value="uni16">Indian Institute of Technology Mandi</option>
+  <option value="uni17">Indian Institute of Technology Jodhpur</option>
+  <option value="uni18">Indian Institute of Technology Tirupati</option>
+  <option value="uni19">Indian Institute of Technology Palakkad</option>
+  <option value="uni20">Indian Institute of Technology Goa</option>
+  <option value="uni21">Indian Institute of Technology Jammu</option>
+  <option value="uni22">Indian Institute of Technology Dharwad</option>
+  <option value="uni23">National Institute of Technology Tiruchirappalli</option>
+  <option value="uni24">National Institute of Technology Karnataka</option>
+  <option value="uni25">National Institute of Technology Rourkela</option>
+  <option value="uni26">National Institute of Technology Warangal</option>
+  <option value="uni27">National Institute of Technology Calicut</option>
+  <option value="uni28">National Institute of Technology Silchar</option>
+  <option value="uni29">National Institute of Technology Durgapur</option>
+  <option value="uni30">Delhi Technological University</option>
+  <option value="uni31">Netaji Subhas University of Technology</option>
+  <option value="uni32">Jawaharlal Nehru University</option>
+  <option value="uni33">University of Delhi</option>
+  <option value="uni34">University of Mumbai</option>
+  <option value="uni35">University of Calcutta</option>
+  <option value="uni36">University of Hyderabad</option>
+  <option value="uni37">Banaras Hindu University</option>
+  <option value="uni38">Aligarh Muslim University</option>
+  <option value="uni39">Jamia Millia Islamia</option>
+  <option value="uni40">Anna University</option>
+  <option value="uni41">Bennett University</option>
+  <option value="uni42">Amrita Vishwa Vidyapeetham</option>
+  <option value="uni43">Vellore Institute of Technology</option>
+  <option value="uni44">Birla Institute of Technology and Science</option>
+  <option value="uni45">Manipal Academy of Higher Education</option>
+  <option value="uni46">SRM Institute of Science and Technology</option>
+  <option value="uni47">Indian Institute of Science</option>
+  <option value="uni48">Tata Institute of Fundamental Research</option>
+  <option value="uni49">Indian Statistical Institute</option>
+  <option value="uni50">All India Institute of Medical Sciences Delhi</option>
+  <option value="uni51">Post Graduate Institute of Medical Education and Research</option>
+  <option value="uni52">National Law School of India University</option>
+  <option value="uni53">Indian Institute of Management Ahmedabad</option>
+  
+            </select>
+          </div>
+          
+
+          <div class="form-group">
+            <label for="password">New Password</label>
+            <div class="password-input">
+              <input type="password" id="password" name="password" minlength="8" placeholder="Enter new password" />
+              <i class="fas fa-eye toggle-password"></i>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <div class="password-input">
+              <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm new password" />
+              <i class="fas fa-eye toggle-password"></i>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="save-btn">SAVE CHANGES</button>
+            <button type="button" class="cancel-btn">CANCEL</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('upload-photo');
+    const profilePreview = document.getElementById('profile-preview');
+  
+    // Show uploaded image preview
+    fileInput.addEventListener('change', function () {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          profilePreview.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  
+    // Toggle password visibility
+    document.querySelectorAll('.toggle-password').forEach(icon => {
+      icon.addEventListener('click', function () {
+        const input = this.previousElementSibling;
+        input.type = input.type === 'password' ? 'text' : 'password';
+        this.classList.toggle('fa-eye-slash');
+      });
+    });
+  
+    // ❌ CANCEL = Refresh the page
+    document.querySelector('.cancel-btn').addEventListener('click', () => {
+      location.reload();
+    });
+  
+    // ✅ SAVE CHANGES = Send to backend and redirect
+    document.getElementById('profileForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+  
+      const formData = new FormData(this);
+      const fileInput = document.getElementById('upload-photo');
+      if (fileInput.files[0]) {
+        formData.append('profileImage', fileInput.files[0]);
+      }
+  
+      try {
+        const response = await fetch('http://localhost:5000/api/user/update', {
+          method: 'POST',
+          body: formData
+        });
+  
+        const result = await response.json();
+  
+        if (result.success) {
+          alert('Profile updated successfully!');
+          window.location.href = "homepage.html"; // ✅ Redirect on success
+        } else {
+          alert('Failed to update profile.');
+        }
+      } catch (error) {
+        alert('An error occurred while saving changes.');
+        console.error(error);
+      }
+    });
+  </script>
+  
